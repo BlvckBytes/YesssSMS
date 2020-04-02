@@ -4,10 +4,10 @@
 In Austria, we have a mobile-network provider called yesss! - located at [yesss.at](https://www.yesss.at). This provider offers you the possibility to send an SMS only by accessing their webpanel with your login-credentials. This API makes use of this and allows you to do so programmatically.
 
 ## Disclaimer
-This software was built in April 2020. The site-infrastructure might change over time. If you use this, you *need* to check out the *config.properties* file anyways, so also check out the URL and ID section. There you can tweak some internal resources if the site changes by a little margin. When the difference starts to get too big, please start an issue over here and I will get that resolved and updated!
+This software was built in April 2020. The site-infrastructure might change over time. If you use this, you *need* to check out the *config.properties* file anyways, so also check out the URL and ID section. There you can tweak some internal resources if the site changes by a little margin. When the difference starts to get too big, please open an issue over here and I will get that resolved and updated!
 
 ## Usage
-First step, as already described before, you need to look into the config.properties. There you can find your login (email or phone-number) and your password to *yesss.at*, these should be familiar to you. If not, check out their website! After thats configured, the API usage is childsplay. I will let the code speak for itself.
+First step, as already described before, you need to look into the *config.properties*. There you can find your login (email or phone-number) and your password to *yesss.at*, these should be familiar to you. If not, check out their website! After thats configured, the API usage is childsplay. I will let the code speak for itself.
 
 ```java
 YesssAPI.sendSMS( "+436601234567", "Hello, world!" );
