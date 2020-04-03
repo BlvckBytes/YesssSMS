@@ -100,7 +100,7 @@ public class YesssSession {
    */
   private List< BasicNameValuePair > prepareSMSFormData( String number, String message ) {
     try {
-      // Note: Somehow it does not respond with the corrent page on the first try.
+      // Note: Somehow it does not respond with the correct page on the first try.
       // Currently, I got no idea why this happes, but this workaround seems to work
       // just fine. If you got a better solution, please inform me about it.
       fetchForm( this.smsURL, this.smsFormID );
