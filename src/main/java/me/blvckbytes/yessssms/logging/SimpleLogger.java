@@ -25,14 +25,12 @@ public class SimpleLogger {
   }
 
   /**
-   * Logs the given message to console, automatically appends the
-   * prefix aswell as translates colors for the unix terminal
+   * Logs the given message to console, automatically appends
+   * the prefix
    * @param input What to log
    * @param level What level to log this entry at
    */
   public void log( String input, SLLevel level ) {
-    input = input.replaceAll( "§([0-9]|[a-f]|[lnokmr])", "" );
-
     // Only log when logger is enabled
     if( this.enabled )
       System.out.println( genPrefix( level ) + input );
@@ -45,8 +43,6 @@ public class SimpleLogger {
    * @param level What level to log this entry at
    */
   public void logInlinePrefixed( String input, SLLevel level ) {
-    input = input.replaceAll( "§([0-9]|[a-f]|[lnokmr])", "" );
-
     // Only log when logger is enabled
     if( this.enabled )
       System.out.print( genPrefix( level ) + input );
@@ -58,8 +54,6 @@ public class SimpleLogger {
    * @param input What to log
    */
   public void logInlineUnprefixed( String input ) {
-    input = input.replaceAll( "§([0-9]|[a-f]|[lnokmr])", "" );
-
     // Only log when logger is enabled
     if( this.enabled )
       System.out.print( input );
