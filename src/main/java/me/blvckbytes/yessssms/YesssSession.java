@@ -126,17 +126,17 @@ public class YesssSession {
         if( name.toLowerCase().contains( "telefonbuch" ) )
           value = "-";
 
-          // Netz ( net ) is always "a", which corresponds to ausland ( foreign country )
-          // If this is done, the number dictates the net, this saves me some
-          // formatting time, since their backend now does it
+        // Netz ( net ) is always "a", which corresponds to ausland ( foreign country )
+        // If this is done, the number dictates the net, this saves me some
+        // formatting time, since their backend now does it
         else if( name.toLowerCase().contains( "netz" ) )
           value = "a";
 
-          // Nummer ( recipient number ) always needs the + sign replaced by 00
+        // Nummer ( recipient number ) always needs the + sign replaced by 00
         else if( name.toLowerCase().contains( "nummer" ) )
           value = number.replace( "+", "00" );
 
-          // Nachricht ( message ) is the main sms body, the content
+        // Nachricht ( message ) is the main sms body, the content
         else if( name.toLowerCase().contains( "nachricht" ) )
           value = message;
 
