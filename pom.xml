@@ -6,7 +6,7 @@
 
     <groupId>me.blvckbytes</groupId>
     <artifactId>YesssSMS</artifactId>
-    <version>0.2-SNAPSHOT</version>
+    <version>0.2</version>
     <packaging>jar</packaging>
 
     <name>API for Yesss Web-SMS control</name>
@@ -81,6 +81,8 @@
                     <descriptorRefs>
                         <descriptorRef>jar-with-dependencies</descriptorRef>
                     </descriptorRefs>
+                    <finalName>YesssSMS-${project.version}</finalName>
+                    <appendAssemblyId>false</appendAssemblyId>
                 </configuration>
                 <executions>
                     <execution>
