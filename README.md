@@ -24,7 +24,23 @@ YesssAPI.toggleLogging( false );
 Thats it! You're up and running already.
 
 ## How to include it
-This library is only available as a jar for now, I'll maybe look into how custom maven dependencies work down the road. Just build the project using the *package* maven goal and get yourself the jar from target/ containing *with-dependencies*!
+This resource is now available through jitpack!
+```xml
+<repositories>
+  <repository>
+    <id>jitpack.io</id>
+    <url>https://jitpack.io</url>
+  </repository>
+</repositories>
+
+<dependencies>
+  <dependency>
+    <groupId>com.github.BlvckBytes</groupId>
+    <artifactId>YesssSMS</artifactId>
+    <version>0.3</version>
+  </dependency>
+</dependencies>
+```
 
 ## Bugs & Improvements
 If you find any bugs, site-infrastructure changes or have improvements on hand, feel free to open up a new issue at any time! Thank you!
