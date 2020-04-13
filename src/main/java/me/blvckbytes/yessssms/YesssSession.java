@@ -16,6 +16,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.nio.charset.StandardCharsets;
 import java.util.*;
 
 public class YesssSession {
@@ -76,7 +77,7 @@ public class YesssSession {
       sendReq.addHeader( "Host", "www.yesss.at" );
       sendReq.addHeader( "Cookies", this.cookies.generate() );
       sendReq.addHeader( "Referrer", this.smsSendURL );
-      sendReq.setEntity( new UrlEncodedFormEntity( paramList ) );
+      sendReq.setEntity( new UrlEncodedFormEntity( paramList, StandardCharsets.UTF_8 ) );
 
       // Check if sending worked
       CloseableHttpResponse resp = this.client.execute( sendReq );
