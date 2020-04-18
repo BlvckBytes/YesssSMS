@@ -45,4 +45,13 @@ public class YesssAPI {
   public static void toggleLogging( boolean state ) {
     SimpleLogger.getInst().setEnabled( state );
   }
+
+  /**
+   * Set an external logger to be used with this program, to
+   * further centralize logging
+   * @param logger Logger to set
+   */
+  public static void setLogger( SimpleLogger logger ) {
+    SimpleLogger.setInst( logger );
+  }
 }

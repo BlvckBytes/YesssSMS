@@ -10,6 +10,7 @@ import java.util.Date;
 public class SimpleLogger {
 
   // To keep the single instance
+  @Setter
   private static SimpleLogger inst;
 
   @Setter
