@@ -6,11 +6,11 @@
 
     <groupId>me.blvckbytes</groupId>
     <artifactId>YesssSMS</artifactId>
-    <version>0.5</version>
+    <version>0.6</version>
     <packaging>jar</packaging>
 
     <name>API for Yesss Web-SMS control</name>
-    <url>https://jitpack.io/#BlvckBytes/YesssSMS/v0.2</url>
+    <url>https://jitpack.io/#BlvckBytes/YesssSMS/v0.6</url>
 
     <properties>
         <!-- Using Java 13 -->

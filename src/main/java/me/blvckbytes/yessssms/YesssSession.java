@@ -21,10 +21,14 @@ import java.util.*;
 
 public class YesssSession {
 
+  // Timeout of login-session in ms
+  private static final long sessTimeout = 1000 * 60 * 25;
+
   // URLs and IDs
   private String loginURL, loginFormID;
   private String smsURL, smsFormID, smsSendURL;
   private String loginData, password;
+  private long loginStamp;
   private String dashboardURL;
 
   private CookieHandler cookies;
@@ -59,12 +63,32 @@ public class YesssSession {
   }
 
   /**
+   * Check the validity of this session. AFAIK the timeout of a session happens after
+   * 30 minutes of use, although it looks like it get's extended after every action.
+   * Nonetheless, to make this work reliable in very long uptimes, logins get refreshed
+   * if they have been older than sessTimeout on every action.
+   */
+  private void checkValidity() {
+    // Session is not old enough yet, so it's still valid
+    if( System.currentTimeMillis() - loginStamp < sessTimeout )
+      return;
+
+    System.out.println( "Session reached timeout, new login!" );
+
+    // Session reached timeout constant, refresh login
+    login();
+  }
+
+  /**
    * Sends an SMS to the given number containing the provided message
    * @param number Phone-Number in the following format (ex.): +4366012345678
    * @param message Message of this sms, needs to be within constraints (max. length, view yesss for further info)
    */
   public void sendSMS( String number, String message ) {
     try {
+      // Check the validity of this session before every action
+      checkValidity();
+
       // Prepare form data
       List< BasicNameValuePair > paramList = prepareSMSFormData( number, message );
 
@@ -159,6 +183,8 @@ public class YesssSession {
    */
   private void login() {
     try {
+      // Clear the maybe existing cookies and fetch the login form
+      this.cookies.clear();
       Element loginForm = fetchForm( this.loginURL, this.loginFormID );
 
       // Not found on this page
@@ -192,6 +218,9 @@ public class YesssSession {
       // Keep dashboard URL in memory, get from redirect
       this.dashboardURL = resp.getFirstHeader( "Location" ).getValue();
       resp.close();
+
+      // Update login stamp
+      loginStamp = System.currentTimeMillis();
     } catch ( Exception e ) {
       SimpleLogger.getInst().log( "Error while logging in!", SLLevel.ERROR );
       SimpleLogger.getInst().log( e, SLLevel.ERROR );

@@ -21,6 +21,13 @@ public class CookieHandler {
   }
 
   /**
+   * Clear out all cookies from the internal store
+   */
+  public void clear() {
+    this.cookies.clear();
+  }
+
+  /**
    * Write and or update cookies to/from the browser session
    * @param response The server's response to extract cookie set-prompts from
    */
