@@ -73,8 +73,6 @@ public class YesssSession {
     if( System.currentTimeMillis() - loginStamp < sessTimeout )
       return;
 
-    System.out.println( "Session reached timeout, new login!" );
-
     // Session reached timeout constant, refresh login
     login();
   }
