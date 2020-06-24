@@ -10,7 +10,7 @@
     <packaging>jar</packaging>
 
     <name>API for Yesss Web-SMS control</name>
-    <url>https://jitpack.io/#BlvckBytes/YesssSMS/v0.6</url>
+    <url>https://jitpack.io/#BlvckBytes/YesssSMS/0.6</url>
 
     <properties>
         <!-- Using Java 13 -->

@@ -37,7 +37,7 @@ This resource is now available through jitpack!
   <dependency>
     <groupId>com.github.BlvckBytes</groupId>
     <artifactId>YesssSMS</artifactId>
-    <version>0.5</version>
+    <version>0.6</version>
   </dependency>
 </dependencies>
 ```
